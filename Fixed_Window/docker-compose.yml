@@ -10,6 +10,8 @@ services:
       - django_media_vol:/app/mediafiles
     ports:
       - "8000:8000"
+    depends_on: 
+      - rate-limit-redis
     networks:
       - rate-limit-django-network
 

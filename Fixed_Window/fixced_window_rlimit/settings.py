@@ -53,7 +53,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "core_apps.rate_limit_app.FixedWindowRateLimitPyDict.FixedWindowRateLimitMiddleware", # Python Dict as cache
+    # "core_apps.rate_limit_app.FixedWindowRateLimitPyDict.FixedWindowRateLimitMiddleware",  # Python Dict as cache
+    "core_apps.rate_limit_app.FixedWindowRateLimitRedis.FixedWindowRateLimitRedisMiddleware",
 ]
 
 ROOT_URLCONF = "fixced_window_rlimit.urls"
