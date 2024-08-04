@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-^0o9ttqzh3_+3dx&^$p9baxdsy1q)w)fef3ycc^%cgrx*p8w!z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "core_apps.rate_limit_app.FixedWindowRateLimit.FixedWindowRateLimitMiddleware",
+    "core_apps.rate_limit_app.FixedWindowRateLimitPyDict.FixedWindowRateLimitMiddleware", # Python Dict as cache
 ]
 
 ROOT_URLCONF = "fixced_window_rlimit.urls"
