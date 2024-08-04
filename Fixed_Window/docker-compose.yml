@@ -1,0 +1,30 @@
+services:
+  django-api:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: rate-limit-django-api
+    volumes: 
+      - django_static_vol:/app/staticfiles 
+      - django_media_vol:/app/mediafiles
+    ports:
+      - "8000:8000"
+    networks:
+      - rate-limit-django-network
+
+  rate-limit-redis: 
+   image: redis:7-alpine
+   networks:
+    - rate-limit-django-network
+    
+
+networks:
+  rate-limit-django-network: 
+
+volumes:
+  django_static_vol: {}
+  django_media_vol: {}
+    
+
+
